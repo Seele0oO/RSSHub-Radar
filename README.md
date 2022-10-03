@@ -42,25 +42,7 @@ RSSHub Radar 是 [RSSHub](https://github.com/DIYgod/RSSHub) 的衍生项目，�
 
 ### 手动安装
 
-首先在 [release](https://github.com/DIYgod/RSSHub-Radar/releases) 页下载相应版本的 `radar.zip` 并解压
-
-**Chrome安装扩展：**
-
-打开 `chrome://extensions/`
-
-打开右上角 `开发者模式`
-
-点击左上角 `加载已解压的扩展程序`
-
-选择解压出的 `dist` 目录
-
-**Firefox安装扩展：**
-
-打开 `about:debugging`
-
-点击右上角 `加载临时扩展程序`
-
-选择解压出的 `dist` 目录中的 `manifest.json` 文件
+https://github.com/DIYgod/RSSHub-Radar/issues/691
 
 ## 参与我们
 
