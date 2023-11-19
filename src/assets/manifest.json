@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "applications": {
         "gecko": {
-            "id": "seele@20220228.xyz"
+            "id": "seele@rsshub.radar"
         }
     },
     "name": "RSSHub Radar",

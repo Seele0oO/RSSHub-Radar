@@ -7,9 +7,9 @@
                     <p v-html="$i18n.t('rsshub radar info')"></p>
                     <p><i class="el-icon-trophy"></i> <span v-html="$i18n.t('sponsored development')"></span></p>
                     <p>&nbsp;</p>
-                    <p>{{$i18n.t('update log')}}: <a target="_blank" href="https://github.com/DIYgod/RSSHub-Radar/releases">https://github.com/DIYgod/RSSHub-Radar/releases</a></p>
-                    <p>{{$i18n.t('question feedback')}}: <a target="_blank" href="https://github.com/DIYgod/RSSHub-radar/issues">https://github.com/DIYgod/RSSHub-radar/issues</a></p>
-                    <p>GitHub: <a target="_blank" href="https://github.com/DIYgod/RSSHub-Radar">https://github.com/DIYgod/RSSHub-Radar</a></p>
+                    <p>{{$i18n.t('update log')}}: <a target="_blank" href="https://github.com/Seele0oO/RSSHub-Radar/releases">https://github.com/Seele0oO/RSSHub-Radar/releases</a></p>
+                    <p>{{$i18n.t('question feedback')}}: <a target="_blank" href="https://github.com/Seele0oO/RSSHub-Radar/issues">https://github.com/Seele0oO/RSSHub-Radar/issues</a></p>
+                    <p>GitHub: <a target="_blank" href="https://github.com/Seele0oO/RSSHub-Radar">https://github.com/Seele0oO/RSSHub-Radar</a></p>
                     <p v-html="$i18n.t('rsshub documentation')"></p>
                     <p>&nbsp;</p>
                     <p><b>{{$i18n.t('everything is possible with rss')}}</b></p>
