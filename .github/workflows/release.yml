@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build assets
+    name: Build and Release Firefox Extension
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -33,11 +33,16 @@ jobs:
         run: pnpm i
       - name: Build file
         run: pnpm run release
+      - name: Install web-ext
+        run: npm install --global web-ext
+      - name: Sign Extension
+        run: |
+          web-ext sign --api-key=${{ secrets.AMO_JWT_ISSUER }} --api-secret=${{ secrets.AMO_JWT_SECRET }} --source-dir=./dist --artifacts-dir=./artifacts
       - name: Upload file
         uses: xresloader/upload-to-github-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          file: "release/radar.zip"
+          file: "artifacts/*.xpi"
           tags: true
           draft: false
