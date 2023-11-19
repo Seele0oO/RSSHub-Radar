@@ -8,8 +8,6 @@ module.exports = {
 
     mode: 'production',
 
-    bail: true,
-
     devtool: false,
 
     performance: {
@@ -40,6 +38,7 @@ module.exports = {
             "url": require.resolve("url/"),
             "https": require.resolve("https-browserify"),
             "timers": require.resolve("timers-browserify"),
+            "process": require.resolve("process/browser"),
         }
     },
 
@@ -184,13 +183,6 @@ module.exports = {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader'
             },
-            {
-                test: /\.(ttf|woff)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                },
-            },
         ]
     },
 
@@ -209,6 +201,10 @@ module.exports = {
         new VueLoaderPlugin(),
         new webpack.DefinePlugin({
             VERSION: JSON.stringify(require('./src/assets/manifest.json').version)
+        }),
+        new webpack.ProvidePlugin({
+          Buffer: ['buffer', 'Buffer'],
+          process: 'process/browser',
         }),
     ],
 };

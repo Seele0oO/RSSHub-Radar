@@ -12,14 +12,7 @@ const defaultTitle =
 const image = (document.querySelector('link[rel~="icon"]') && handleUrl(document.querySelector('link[rel~="icon"]').getAttribute('href'))) || document.location.origin + '/favicon.ico';
 
 function handleUrl(url) {
-    if (url.startsWith('//')) {
-        url = document.location.protocol + url;
-    } else if (url.startsWith('/')) {
-        url = document.location.origin + url;
-    } else if (!/^(http|https):\/\//i.test(url)) {
-        url = document.location.href + '/' + url.replace(/^\//g, '');
-    }
-    return url;
+    return new URL(url, document.location.href).toString();
 }
 
 export function getPageRSS() {
@@ -49,6 +42,7 @@ export function getPageRSS() {
             'text/rss',
             'text/atom',
             'text/rdf',
+            'application/feed+json',
         ];
         const links = document.querySelectorAll('link[type]');
         for (let i = 0; i < links.length; i++) {
@@ -77,7 +71,7 @@ export function getPageRSS() {
                 const href = aEles[i].getAttribute('href');
 
                 if (
-                    href.match(/\/(feed|rss|atom)(\.(xml|rss|atom))?$/) ||
+                    href.match(/\/(feed|rss|atom)(\.(xml|rss|atom))?\/?$/) ||
                     (aEles[i].hasAttribute('title') && aEles[i].getAttribute('title').match(check)) ||
                     (aEles[i].hasAttribute('class') && aEles[i].getAttribute('class').match(check)) ||
                     (aEles[i].innerText && aEles[i].innerText.match(check))

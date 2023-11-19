@@ -1,10 +1,10 @@
 <template>
     <div class="list">
         <el-main>
-            <div class="title">规则列表</div>
+            <div class="title">{{ $i18n.t('rules') }}</div>
             <div class="tip">
-                <p>更多规则支持中，快来<a target="_blank" href="https://docs.rsshub.app/joinus/">参与我们</a>吧！</p>
-                <p>{{ time }}前更新</p>
+                <p v-html="$i18n.t('for more rules join us')"></p>
+                <p>{{ $i18n.t('updated time ago', {hours: hours, minutes: minutes})}}</p>
             </div>
             <div class="content" v-loading="loading">
                 <el-collapse accordion>
@@ -17,17 +17,22 @@
                     </el-collapse-item>
                 </el-collapse>
                 <div class="debug">
-                    <div class="tip">
-                        <p>此处用于开发中的规则调试，非战斗人员请迅速撤离</p>
-                        <p>编辑内容随时可能被自动更新的规则覆盖，请保证本地有备份</p>
-                        <p>使用 设置-立即更新 可以立即恢复远程规则</p>
+                    <div class="tip" v-if="defaultConfig.enableRemoteRules">
+                        <p>This area is used for debugging rules in development</p>
+                        <p>Edited content may be overwritten by automatically updated rules at any time, please ensure that there is a local backup</p>
+                        <p>Use Settings - Update Now to immediately restore remote rules</p>
+                    </div>
+                    <div class="tip" v-if="!defaultConfig.enableRemoteRules">
+                        <p>This area is used for debugging rules in development</p>
+                        <p>Remote updates and debug function is not available due to browser limitations</p>
                     </div>
                     <el-input
                         type="textarea"
                         :rows="100"
-                        placeholder="请输入内容"
                         v-model="rulesText"
-                        @change="updateRules">
+                        @change="updateRules"
+                        :disabled="!defaultConfig.enableRemoteRules"
+                    >
                     </el-input>
                 </div>
             </div>
@@ -37,20 +42,25 @@
 
 <script>
 import { getRules, getRulesDate, updateRules } from '../../common/rules';
-import { secondToTime, commandSandbox } from '../../common/utils';
+import { secondToHoursMinutes, commandSandbox } from '../../common/utils';
+import { defaultConfig } from '../../common/config';
 
 export default {
     name: 'List',
     data: () => ({
         loading: true,
         rules: {},
-        time: '',
+        hours: '',
+        minutes: '',
         rulesText: '',
+        defaultConfig,
     }),
     created() {
         getRulesDate((date) => {
             let second = (+new Date - +date) / 1000;
-            this.time = secondToTime(second);
+            const {hours, minutes} = secondToHoursMinutes(second)
+            this.hours = hours;
+            this.minutes = minutes;
             this.refreshTime();
         });
         getRules((rules) => {
@@ -72,7 +82,9 @@ export default {
     methods: {
         refreshTime() {
             getRulesDate((date) => {
-                this.time = secondToTime((+new Date - +date) / 1000);
+                const {hours, minutes} = secondToHoursMinutes((+new Date - +date) / 1000)
+                this.hours = hours;
+                this.minutes = minutes;
                 setTimeout(() => {
                     this.refreshTime();
                 }, 1000);
@@ -81,7 +93,7 @@ export default {
         updateRules() {
             updateRules(this.rulesText, () => {
                 this.$message({
-                    message: '保存成功',
+                    message: this.$i18n.t('successfully saved'),
                     type: 'success'
                 });
             });
