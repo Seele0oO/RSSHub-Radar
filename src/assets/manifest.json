@@ -37,5 +37,6 @@
         "notifications",
         "alarms",
         "idle"
-    ]
+    ],
+    "content_security_policy": "script-src 'self' https://rsshub.js.org; object-src 'self';"
 }
