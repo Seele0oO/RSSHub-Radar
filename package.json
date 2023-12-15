@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo package",
+    "release": "plasmo build --target=firefox-mv2 &&pnpm package  --target=firefox-mv2"
   },
   "dependencies": {
     "@iconify-json/mingcute": "^1.1.13",
@@ -63,7 +64,7 @@
     ],
     "browser_specific_settings": {
       "gecko": {
-        "id": "i@diygod.me"
+        "id": "seele@rsshub.radar"
       }
     }
   }
