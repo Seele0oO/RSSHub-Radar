@@ -37,7 +37,7 @@ jobs:
         run: npm install --global web-ext
       - name: Sign Extension
         run: |
-          web-ext sign --api-key=${{ secrets.AMO_JWT_ISSUER }} --api-secret=${{ secrets.AMO_JWT_SECRET }} --source-dir=. --artifacts-dir=./build/firefox-mv2-prod --id=seele@rsshub.radar
+          web-ext sign --api-key=${{ secrets.AMO_JWT_ISSUER }} --api-secret=${{ secrets.AMO_JWT_SECRET }} --source-dir=./build/firefox-mv2-prod --artifacts-dir=./build/firefox-mv2-prod.zip
       - name: Upload file
         uses: xresloader/upload-to-github-release@v1
         env:
