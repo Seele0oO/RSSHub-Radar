@@ -1,0 +1,140 @@
+{
+  "extensionDescription": {
+    "message": "Easily find and subscribe to RSS and RSSHub."
+  },
+  "about": {
+    "message": "About"
+  },
+  "accessKey": {
+    "message": "Access key"
+  },
+  "clickToSet": {
+    "message": "Click to set"
+  },
+  "configurationRequiredIfAccessKeysEnabled": {
+    "message": "Configuration is required only if the instance has enabled access key"
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "currentPageRSS": {
+    "message": "RSS on the current page"
+  },
+  "currentPageRSSHub": {
+    "message": "RSSHub for the current page"
+  },
+  "customRSSHubDomain": {
+    "message": "RSSHub instance"
+  },
+  "currentSiteRSSHub": {
+    "message": "RSSHub for the current site"
+  },
+  "document": {
+    "message": "Doc"
+  },
+  "iWillUpdateAutomaticallyAndYouCan": {
+    "message": "I will update automatically, and you can"
+  },
+  "updating": {
+    "message": "Updating"
+  },
+  "updateNow": {
+    "message": "Update Now"
+  },
+  "beforeUpdate": {
+    "message": "before update"
+  },
+  "afterAutomaticUpdate": {
+    "message": "after automatic update"
+  },
+  "fullRemoteUpdatesAreDisabledDueToBrowserLimitations": {
+    "message": "Full remote updates are disabled due to browser limitations"
+  },
+  "forMoreRulesJoinUs": {
+    "message": "For more rules support, <a target=\"_blank\" href=\"https://docs.rsshub.app/joinus/quick-start.html\">join us</a>！"
+  },
+  "general": {
+    "message": "General"
+  },
+  "popupWindowHotKey": {
+    "message": "Popup window hotkey"
+  },
+  "joinRSSHub": {
+    "message": "Join <a href=\"https://docs.rsshub.app\" target=\"_blank\">RSSHub</a> to make everything RSSible!"
+  },
+  "listOfRules": {
+    "message": "List of rules"
+  },
+  "localReader": {
+    "message": "Local reader"
+  },
+  "notificationsAndReminders": {
+    "message": "Badge reminder"
+  },
+  "RSSNotFound": {
+    "message": "No RSS found"
+  },
+  "rules": {
+    "message": "Radar Rules"
+  },
+  "rulesUpdate": {
+    "message": "Rules update"
+  },
+  "settings": {
+    "message": "Extension Settings"
+  },
+  "RSSHubRelatedSettings": {
+    "message": "RSSHub Settings"
+  },
+  "quickSubscription": {
+    "message": "Quick Subscriptions"
+  },
+  "showCornerBadge": {
+    "message": "Show corner badge"
+  },
+  "updatedTimeAgo": {
+    "message": "%{hours}h %{minutes}m since last update"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "RSSHubRadarInfo": {
+    "message": "RSSHub Radar is a spin-off of <a target=\"_blank\" href=\"https://docs.rsshub.app\">RSSHub</a> that helps you quickly discover and subscribe to RSS and RSSHub for your current site, and the project is <a target=\"_blank\" href=\"https://github.com/DIYgod/RSSHub-Radar\">open source</a> under the MIT license and is completely free to use."
+  },
+  "sponsoredDevelopment": {
+    "message": "⭐️ Sponsor RSSHub Radar: <a target=\"_blank\" href=\"https://docs.rsshub.app/support/\">https://docs.rsshub.app/support/</a>"
+  },
+  "updateLog": {
+    "message": "📝 Update log"
+  },
+  "questionFeedback": {
+    "message": "🙋 Question feedback"
+  },
+  "RSSHubDocumentation": {
+    "message": "🗞️ RSSHub Documentation: <a target=\"_blank\" href=\"https://docs.rsshub.app\">https://docs.rsshub.app</a>"
+  },
+  "fillInstanceDomain": {
+    "message": "Please fill in your instance domain"
+  },
+  "totalNumberOfRules": {
+    "message": "Total number of rules"
+  },
+  "updateSuccessful": {
+    "message": "Update successful"
+  },
+  "updateTip": {
+    "message": "Automatically update every two hours, you can also manually update."
+  },
+  "extensionInstallTip": {
+    "message": "🎉 RSSHub Radar installed"
+  },
+  "extensionUpdateTip": {
+    "message": "🎉 RSSHub Radar updated"
+  },
+  "clickToViewChangeLog": {
+    "message": "click to view the change log."
+  }
+}
