@@ -43,6 +43,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          file: "artifacts/*.xpi"
+          file: "artifacts/*.zip"
           tags: true
           draft: false
